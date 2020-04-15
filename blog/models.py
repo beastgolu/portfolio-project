@@ -8,3 +8,9 @@ class blog(models.Model):
     pub_date = models.DateField()
     image = models.ImageField(upload_to='images/')
     body = models.TextField()
+
+    def summary(self):
+        return self.body[:200]
+
+    def __str__(self):
+        return self.title
